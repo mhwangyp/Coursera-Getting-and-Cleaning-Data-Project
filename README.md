@@ -1,12 +1,12 @@
-# Coursera-Getting-and-Cleaning-Data-Project
+# Coursera-Getting-and-Cleaning-Data-Project #
 
-Course Project
+Course Project:
 
-This repository hosts the R code and documentation files for Coursera's "Getting and Cleaning data" course.
+This repository hosts the R code and documentation files for Coursera's "Getting and Cleaning data" course project.
 
 The dataset used is: "Human Activity Recognition Using Smartphones" 
 
-Files 
+Files in this repo:
 
 run_analysis.R contains all the code to perform the analyses described in the 5 steps:
 
