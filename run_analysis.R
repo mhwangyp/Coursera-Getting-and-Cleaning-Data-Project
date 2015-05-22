@@ -49,3 +49,11 @@
     Data2<-Data2[order(Data2$Subject,Data2$Activity),]
 
     write.table(Data2, file = "tidydata.txt",row.name=FALSE)
+
+
+##  function to output tidy data set created from step 5
+    
+    read_tidy_set <- function(PathToTidy) {
+        tidy_set <- read.table(PathToTidy)
+        return (tidy_set)
+    }
