@@ -1,5 +1,6 @@
+# Read Data 
  path <- file.path("UCI HAR Dataset")
-    
+ 
     LabelTrain <- read.table(file.path(path, "train", "Y_train.txt"),header = FALSE)
     LabelTest <- read.table(file.path(path, "test", "Y_test.txt"),header = FALSE)
     
