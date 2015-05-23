@@ -17,8 +17,6 @@
     dim(JoinLabel)  # 10299*1, Y
     dim(JoinSubject)  # 10299*1, Subject
     dim(JoinData)  # 10299*561, X
-    
-    Data <- cbind(JoinLabel, JoinSubject, JoinData)
 
 #2  Extracts only the measurements on the mean and standard deviation for each measurement. 
     Features <- read.table(file.path(path, "features.txt"), header = FALSE)
@@ -34,26 +32,25 @@
     ActivityLabel <- read.table(file.path(path, "activity_labels.txt"), header = FALSE)
     Activity <- ActivityLabel[JoinLabel[, 1], 2]
     JoinLabel[, 1] <- Activity
-    names(JoinLabel) <- "Activity"
 
 #4  Appropriately labels the data set with descriptive variable names. 
     names(JoinSubject) <- "Subject"
+    names(JoinLabel) <- "Activity"
     nData <- cbind(JoinSubject, JoinLabel, JoinData)
     dim(nData) #10299*68
 
-    write.table(nData, "merged_data.txt")
-
 #5  From the data set in step 4, creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+    write.table(nData, "merged_data.txt")
     library(plyr)
     Data2<-aggregate(. ~subject + activity, nData, mean)
     Data2<-Data2[order(Data2$Subject,Data2$Activity),]
 
     write.table(Data2, file = "tidydata.txt",row.name=FALSE)
 
-
-##  function to output tidy data set created from step 5
+#6  function to output tidy data set created from step 5
     
     read_tidy_set <- function(PathToTidy) {
         tidy_set <- read.table(PathToTidy)
         return (tidy_set)
     }
+    read_tidy_set("./tidydata.txt")
