@@ -4,7 +4,7 @@ This file describes the variables, the data, and any transformations or work tha
 * The data used for the project:  
 https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip  
 
-* The run_analysis.R script performs the following steps to clean the data:   
+The run_analysis.R script performs the following steps to clean the data:   
 
 ##  Reads data.
   Read "X_train.txt", "Y_train.txt" and "subject_train.txt" from the "./data/train" folder and store them in `DataTrain`, `LabelTrain` and `SubjectTrain` variables respectively.       
